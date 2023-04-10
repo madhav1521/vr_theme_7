@@ -1,0 +1,20 @@
+export const mockupimage = require ("./hero-image.png")
+export const bgimage = require ("./bg-image.jpg")
+export const brandlogo = require ("./company-logo.svg").default
+
+export const brandicon = require ("./company-icon.svg").default
+export const profile = require ("./profile-pic.png")
+export const dashboard = require ("./ic-dashboard.svg").default
+export const statistics = require ("./ic-statistics.svg").default
+export const maintenance = require ("./ic-maintenance.svg").default
+export const users = require ("./ic-users.svg").default
+export const orders = require ("./ic-orders.svg").default
+export const settings = require ("./ic-settings.svg").default
+export const documents = require ("./ic-documents.svg").default
+export const documentsnew = require ("./ic-documents-active.svg").default
+export const dashboardnew = require ("./ic-dashboard-active.svg").default
+export const usersnew = require ("./ic-users-active.svg").default
+export const maintenancenew = require ("./ic-maintenance-active.svg").default
+export const settingsnew = require ("./ic-settings-active.svg").default
+export const ordersnew = require ("./ic-orders-active.svg").default
+export const statisticsnew = require ("./ic-statistics-active.svg").default
