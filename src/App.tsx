@@ -6,6 +6,7 @@ import { ThemeProvider } from '@mui/material';
 import Login from './pages/Login';
 import { appTheme } from './app.theme';
 import Dashboard from './pages/Dashboard';
+import Statistics from './pages/Statistics';
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         <Routes >
           <Route path="/" element={<Login></Login>} />
           <Route path="/dashboard" element={<Dashboard></Dashboard>} />
-            {/* <Route path="/users" element={<Users></Users>} />
-            <Route path="/maintenance" element={<Maintenance></Maintenance>} />
+            <Route path="/statistics" element={<Statistics></Statistics>} />
+            {/* <Route path="/maintenance" element={<Maintenance></Maintenance>} />
             <Route path="/offer" element={<Offer></Offer>} />
             <Route path="/sales" element={<Sales></Sales>} />
             <Route path="/setting" element={<Setting></Setting>} /> */}

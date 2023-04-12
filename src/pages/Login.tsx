@@ -1,8 +1,9 @@
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { BorderColor, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Box, Button, Card, Checkbox, Container, FormControl, FormControlLabel, Grid, IconButton, Input, InputAdornment, InputLabel, Link, OutlinedInput, Paper, TextField, Typography } from '@mui/material';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { brandlogo, mockupimage } from '../assets/images';
+import { title } from 'process';
 
 export default function Login() {
 
@@ -60,7 +61,7 @@ export default function Login() {
                                                     onMouseDown={handleMouseDownPassword}
                                                     edge="end"
                                                 >
-                                                    {showPassword ?  <Visibility />: <VisibilityOff />}
+                                                    {showPassword ?  <Visibility color='warning'/>: <VisibilityOff color='warning'/>}
                                                 </IconButton>
                                             </InputAdornment>
                                         }
@@ -72,8 +73,8 @@ export default function Login() {
 
                         <Box className="forgot-line">
                             <FormControlLabel
-                                control={<Checkbox />}
-                                label="Remember me"
+                                control={<Checkbox style={{borderColor:'warning'}} />}
+                                label="Remember me" className='remember-me'
                             />
                             <Link href="#" title="forgot password" className="forgot-password">
                                 Forgot Password?
@@ -85,10 +86,8 @@ export default function Login() {
                             disableElevation
                             variant="contained"
                             className="login-btn"
-                            onClick={() => {
-                                navigate("/dashboard");
-                            }}
-                            
+                            title="login to dashboard"
+                            onClick={() => {navigate("/dashboard");}}
                         >
                             Login
                         </Button>
