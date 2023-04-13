@@ -67,7 +67,7 @@ export default function Dashboard() {
           <Box className='page-content'>
             <Box className='page-title'>
               <Typography variant='h2' >Dashboard</Typography>
-              <Button variant='contained' className='generate-report' title='generate-report'>
+              <Button disableElevation variant='contained' className='generate-report' title='generate-report'>
                 <img src={report_download} alt="download" />
                 <Typography variant='h6' component='span' >Generate Report</Typography>
               </Button>

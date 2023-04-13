@@ -95,7 +95,7 @@ export default function Statistics() {
                                 {/* First Column
                                 ------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography variant='h5' className='card-head inner-head'>One Column</Typography>
-                                <Grid container spacing={2}>
+                                <Grid container spacing={{xs:2,sm:3}}>
                                     <Grid item xs={12}>
                                         <TextField
                                             autoComplete="given-name"
@@ -117,7 +117,7 @@ export default function Statistics() {
                                                     onChange={handleChange1}
                                                     label="Dropdown"
                                                     fullWidth
-                                                    className="login-select text"
+                                                    className="text-select"
                                                 >
                                                     <MenuItem value={1}>India</MenuItem>
                                                     <MenuItem value={2}>America</MenuItem>
@@ -135,7 +135,7 @@ export default function Statistics() {
                                             label="Text area"
                                             type="textarea"
                                             multiline
-                                            rows={4}
+                                            rows={5}
                                             defaultValue="Default Value"
                                         />
                                     </Grid>
@@ -143,7 +143,7 @@ export default function Statistics() {
                                 {/* second Column
                                 ------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography variant='h5' className='card-head inner-head'>Two Column</Typography>
-                                <Grid container columnSpacing={4} rowSpacing={2}>
+                                <Grid container columnSpacing={{xs:2,sm:3, md:4}} rowSpacing={{xs:2, md:3}}>
                                     <Grid item xs={12} sm={6}>
                                         <TextField
                                             autoComplete="name"
@@ -165,7 +165,7 @@ export default function Statistics() {
                                                     onChange={handleChange2}
                                                     label="Dropdown"
                                                     fullWidth
-                                                    className="login-select"
+                                                    className="text-select"
                                                 >
                                                     <MenuItem value={4}>India</MenuItem>
                                                     <MenuItem value={5}>America</MenuItem>
@@ -210,8 +210,8 @@ export default function Statistics() {
                                 {/* Third Column
                                 ------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography variant='h5' className='card-head inner-head'>Third Column</Typography>
-                                <Grid container columnSpacing={4} rowSpacing={2}>
-                                    <Grid item xs={12} sm={6} lg={3}>
+                                <Grid container columnSpacing={{xs:2,sm:3, md:4}} rowSpacing={{xs:2, md:3}}>
+                                    <Grid item xs={12} sm={4}>
                                         <Box
                                             component="form"
                                             noValidate
@@ -224,7 +224,6 @@ export default function Statistics() {
                                                 id="outlined-error-helper-text"
                                                 label="Error"
                                                 defaultValue='Designer'
-                                                // helperText="Enter Valid data"
                                                 variant="outlined"
                                                 autoComplete="email"
                                             />
@@ -260,7 +259,7 @@ export default function Statistics() {
                                 ------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography variant='h5' className='card-head inner-head'>Fourth Column</Typography>
 
-                                <Grid container columnSpacing={4} rowSpacing={2}>
+                                <Grid container columnSpacing={{xs:2,sm:3, md:4}} rowSpacing={{xs:2, md:3}}>
 
                                     <Grid item xs={12} sm={6} lg={3}>
                                         <TextField
@@ -274,7 +273,7 @@ export default function Statistics() {
                                     </Grid>
                                     <Grid item xs={12} sm={6} lg={3}>
                                         <FormControl variant="outlined" fullWidth>
-                                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                            <InputLabel htmlFor="outlined-adornment-password">Focus</InputLabel>
                                             <OutlinedInput
                                                 type={showPassword2 ? 'text' : 'password'}
                                                 endAdornment={
@@ -289,7 +288,7 @@ export default function Statistics() {
                                                         </IconButton>
                                                     </InputAdornment>
                                                 }
-                                                label="Password"
+                                                label="Focus"
                                             />
                                         </FormControl>
                                     </Grid>
@@ -297,14 +296,14 @@ export default function Statistics() {
                                     <Grid item xs={12} sm={6} lg={3}>
                                         <Box>
                                             <FormControl variant="outlined" fullWidth>
-                                                <InputLabel id="demo-simple-select-outlined-label">Select</InputLabel>
+                                                <InputLabel id="demo-simple-select-outlined-label">Dropdown</InputLabel>
                                                 <Select
                                                     labelId="demo-simple-select-outlined-label"
                                                     value={select3}
                                                     onChange={handleChange3}
-                                                    label="Select"
+                                                    label="Dropdown"
                                                     fullWidth
-                                                    className="login-select"
+                                                    className="text-select"
                                                 >
                                                     <MenuItem value={10}>India</MenuItem>
                                                     <MenuItem value={7}>America</MenuItem>
@@ -335,13 +334,13 @@ export default function Statistics() {
                                     File Upload
                                 </Typography>
 
-                                <Stack direction="row" alignItems="center" spacing={2} className="upload-content">
+                                <Stack direction="row" alignItems="center" spacing={3} className="upload-content">
                                     <Button variant="outlined" component="label" className="upload-btn" >
                                         <img src={upload_icon
                                         } alt="upload files" /> &nbsp; Upload
                                         <input hidden accept="image/*" multiple type="file" />
                                     </Button>
-                                    <Typography component="h4" variant="h6" className=" nis">
+                                    <Typography component="p" variant="body1" className=" nis">
                                         No item Selected
                                     </Typography>
                                 </Stack>
@@ -352,13 +351,15 @@ export default function Statistics() {
                                     Check Box
                                 </Typography>
                                 <Grid item xs={12}>
-                                    <FormControlLabel
+                                    <FormControlLabel 
+                                        className='icon-label-text'
                                         control={
                                             <Checkbox color="primary" />
                                         }
                                         label="Selected"
                                     />&nbsp;&nbsp;&nbsp;
                                     <FormControlLabel
+                                        className='icon-label-text'
                                         control={
                                             <Checkbox color="primary" />
                                         }
@@ -379,21 +380,20 @@ export default function Statistics() {
                                             aria-labelledby="demo-row-radio-buttons-group-label"
                                             name="row-radio-buttons-group"
                                         >
-                                            <FormControlLabel value="female" control={<Radio />} label="Selected" />&nbsp;&nbsp;&nbsp;
-                                            <FormControlLabel value="male" control={<Radio />} label="Not yet Selected" />
+                                            <FormControlLabel className='icon-label-text' value="female" control={<Radio />} label="Selected" />&nbsp;&nbsp;&nbsp;
+                                            <FormControlLabel className='icon-label-text' value="male" control={<Radio />} label="Not yet Selected" />
                                         </RadioGroup>
                                     </FormControl>
                                 </Grid>
                                 {/* Snackbar starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography component="h6" variant="h6" className="inner-subhead snackbar-head page-subhead" marginTop="31px">
-                                    Snackbar
+                                    Snack Bar
                                 </Typography>
-                                <Grid container rowSpacing={3} columnSpacing={4} className="validation-notes">
-                                    <Grid item xs={12} md={6} sx={{ display: open3 ? "block" : "none" }}>
-                                        <Box >
+                                <Grid container rowSpacing={3} columnSpacing={4} >
+                                    <Grid item xs={12} md={6} sx={{ display: open1 ? "block" : "none" }}>
+                                        <Box className="validation-notes">
                                             <Collapse in={open1} >
-
                                                 <Alert className="text-danger"
                                                     action={
                                                         <IconButton
@@ -409,7 +409,7 @@ export default function Statistics() {
                                                     }
                                                 >
                                                     <img src={error} alt="" />
-                                                    <Typography component="p" variant="body2" className='text-message error-ic' >This is an error Message</Typography>
+                                                    <Typography component="p" variant="subtitle2" className='text-message error-ic' >This is an error Message</Typography>
                                                 </Alert>
                                             </Collapse>
 
@@ -417,7 +417,7 @@ export default function Statistics() {
 
                                     </Grid>
                                     <Grid item xs={12} md={6} sx={{ display: open2 ? "block" : "none" }}>
-                                        <Box>
+                                        <Box className="validation-notes">
                                             <Collapse in={open2}>
                                                 <Alert className="text-info"
                                                     id="box2"
@@ -435,14 +435,14 @@ export default function Statistics() {
                                                     }
                                                 >
                                                     <img src={info} alt="" />
-                                                    <Typography component="p" variant="body2" className='text-message info-ic'>This is an information message!</Typography>
+                                                    <Typography component="p" variant="subtitle2" className='text-message info-ic'>This is an information message!</Typography>
                                                 </Alert>
                                             </Collapse>
                                         </Box>
 
                                     </Grid>
                                     <Grid item xs={12} md={6} sx={{ display: open3 ? "block" : "none" }}>
-                                        <Box className="alert">
+                                        <Box className="validation-notes">
                                             <Collapse in={open3}>
                                                 <Alert className="text-warn"
                                                     action={
@@ -459,13 +459,13 @@ export default function Statistics() {
                                                     }
                                                 >
                                                     <img src={warn} alt="" />
-                                                    <Typography component="p" variant="body2" className='text-message warn-ic'>This is a warning message!</Typography>
+                                                    <Typography component="p" variant="subtitle2" className='text-message warn-ic'>This is a warning message!</Typography>
                                                 </Alert>
                                             </Collapse>
                                         </Box>
                                     </Grid>
                                     <Grid item xs={12} md={6} sx={{ display: open4 ? "block" : "none" }}>
-                                        <Box >
+                                        <Box className="validation-notes">
                                             <Collapse in={open4}>
                                                 <Alert className="text-success"
                                                     action={
@@ -482,21 +482,27 @@ export default function Statistics() {
                                                     }
                                                 >
                                                     <img src={valid} alt="" />
-                                                    <Typography component="p" variant="body2" className='text-message valid-ic'>This is an Success message!</Typography>
+                                                    <Typography component="p" variant="subtitle2" className='text-message valid-ic'>This is an Success message!</Typography>
                                                 </Alert>
                                             </Collapse>
                                         </Box>
                                     </Grid>
                                 </Grid>
+                                 {/* CTA starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography component="h6" variant="h6" className="inner-subhead cta page-subhead">
                                     CTA
                                 </Typography>
                                 <Box className="prim-sec">
-                                    <Button type="submit" disableElevation variant="contained" className="primary-btn" onClick={() => { navigate("/"); }} >
-                                        Primary
+                                    <Button type="submit" disableElevation variant="contained" className="primary-btn" onClick={() => { navigate("/dashboard"); }} >
+                                        <Typography component="span" variant="h6" color={'white'}>
+                                            Primary
+                                        </Typography>
                                     </Button>
                                     <Button type="submit" disableElevation variant="outlined" className="secondary-btn" onClick={() => { navigate("/"); }} >
-                                        Secondary
+                                        <Typography component="span" variant="h6" color={'primary'}>
+                                            Secondary
+                                        </Typography>
                                     </Button>
                                 </Box>
                                 {/* Tabs starts

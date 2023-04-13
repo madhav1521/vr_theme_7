@@ -11,7 +11,6 @@ export default function Sidebar() {
     return (
         <Box className="sidebar">
             <Box className="brand-logo"><NavLink to='/dashboard' title="brand-logo" > <img src={brandlogo} alt=""  /></NavLink></Box>
-            <Divider />
             <Box className='sidebar-content'>
                 <Box className='profile' >
                     <NavLink to='/' title='Your profile'><img src={profile} alt="profile" /></NavLink>
