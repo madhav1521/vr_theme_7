@@ -109,6 +109,13 @@ export const appTheme = createTheme({
             fontWeight: "400",
             letterSpacing: "-0.01em",
         },
+        // body1:{
+        //     fontSize: "15px",
+        //     lineHeight: "17px",
+        //     color: secondaryLight,
+        //     fontWeight: "400",
+        //     letterSpacing: "-0.01em",
+        // },
         body2: {
             fontSize: "12px",
             lineHeight: "14px",
@@ -205,6 +212,33 @@ export const appTheme = createTheme({
                         marginLeft: "auto",
                         textTransform: "capitalize",
                     },
+                    ".upload-content &.MuiButton-root":{
+                        padding:"7px 25px 8px",
+                        border:"0",
+                        backgroundColor:primaryContrast,
+                        textTransform:"lowercase",
+                        color:secondary,
+
+                    },
+                    "&.primary-btn, &.secondary-btn":{
+                        padding:"11px 39px",
+                        "& span":{
+                            fontWeight:"600",
+                            "@media(max-width:599px)":{
+                                fontWeight:"400",
+                            },
+                        },
+                        "@media(max-width:599px)":{
+                            width:"130px",
+                            padding:"10px 35px",
+                        },
+                    },
+                    "&.primary-btn":{
+                        marginRight:"20px",
+                        "@media(max-width:599px)":{
+                            marginRight:"10px",
+                        },
+                    },
                 },
             },
         },
@@ -224,9 +258,13 @@ export const appTheme = createTheme({
                     fontWeight: "400",
                     lineHeight: "17px",
                     color: secondaryLight,
-                    ".MuiSvgIcon-root": {
-                        width: "14px",
-                        height: "14px",
+                    ".MuiCheckbox-root .MuiSvgIcon-root": {
+                        width: "15px",
+                        height: "15px",
+                    },
+                    ".MuiRadio-root .MuiSvgIcon-root": {
+                        width: "16px",
+                        height: "16px",
                     },
                     "&.remember-me .MuiFormControlLabel-label  ":{
                         fontSize:"12px",
@@ -250,6 +288,18 @@ export const appTheme = createTheme({
 
             },
         },
+        MuiFormLabel:{
+            styleOverrides:{
+                root:{
+                    "&.MuiInputLabel-root":{
+                        top:"-2px",
+                    },
+                    "&.MuiInputLabel-root.Mui-focused":{
+                        top:"1px",
+                    },
+                },
+            },
+        },
         MuiInputLabel: {
             styleOverrides: {
                 root: {
@@ -257,6 +307,13 @@ export const appTheme = createTheme({
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "18px",
+                    // top:"-2px",
+                    // ".MuiInputLabel-root .Mui-focused":{
+                    //     top:"1px",
+                    //     // ".MuiInputLabel-root":{
+                    //     //     top:"10px",
+                    //     // },
+                    // },
                 },
             },
         },
@@ -291,6 +348,31 @@ export const appTheme = createTheme({
                     },
                     "&.names": {
                         fontWeight: "600",
+                    },
+                    ".icon-label-text &.MuiTypography-root":{
+                        fontSize:"15px",
+                        fontWeight:"400",
+                        lineHeight:"18px",
+                        color:secondaryLight,
+                    },
+                    "&.nis":{
+                        fontSize:"15px",
+                        fontWeight:"400",
+                        lineHeight:"18px",
+                        color:secondaryLight,
+                    },
+                    "&.tab-text":{
+                        fontSize:"15px",
+                        fontWeight:"400",
+                        lineHeight:"20px",
+                        color:secondaryMain,
+                    },
+                    "&.text-message ":{
+                        fontSize:"14px",
+                        fontWeight:"600",
+                        lineHeight:"16px",
+                        color:white,
+                        marginLeft:"8px"
                     },
                 },
             },
@@ -339,6 +421,31 @@ export const appTheme = createTheme({
                 root: {
                     borderRadius: "5px",
                     height: "48px",
+                    ".textarea &.MuiOutlinedInput-root":{
+                        height:"173px",
+                        padding:"0",
+                    },
+                    ".MuiSelect-icon":{
+                        opacity:"0",    
+                    },
+                    "&.Mui-disabled .MuiOutlinedInput-notchedOutline":{
+                          border: "1px dashed" + greyDark,
+                    },
+                    "&.Mui-error .MuiOutlinedInput-notchedOutline":{
+                        border: "1px solid #FF5555" ,
+                    },
+                    "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
+                        borderWidth:"1px",
+                    },
+                    // "&:focus .MuiOutlinedInput-notchedOutline":{
+                    //     borderColor:primary,
+                    // },
+                    // "&:active .MuiOutlinedInput-notchedOutline":{
+                    //     borderColor:primary,
+                    // },
+                    "&:hover .MuiOutlinedInput-notchedOutline":{
+                        borderColor:"#2977a361",
+                    },
                 },
                 input: {
                     padding: "13px 14px",
@@ -350,6 +457,111 @@ export const appTheme = createTheme({
                 },
             },
         },
+        MuiAlert: {
+            styleOverrides: {
+              icon: {
+                display: "none",
+              },
+              action:{
+                margin:0,
+                padding:0,
+              },
+              root:{
+                padding: "4px 5px 4px 10px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent:"space-between",
+                background:"transparent",
+                color:white,
+                borderRadius: "5px", 
+                "&.text-danger":{
+                  backgroundColor:"#FF5555",
+                },
+                "&.text-info":{
+                  backgroundColor:primary,
+                },
+                "&.text-warn":{
+                  backgroundColor:"#F6CA2F",
+                },
+                "&.text-success":{
+                  backgroundColor:"#7EB62E",
+                },
+              },
+              message:{
+                alignItems:"center",
+                display:"flex",
+                color:white,
+              },
+            },
+          },
+        MuiTabs: {
+            styleOverrides: {
+              flexContainer: {
+                flexWrap:"nowrap",
+                height:"38px",
+                "&.MuiTabs-indicator":{
+                  height:"3px",
+                  marginBottom:"-1px",
+                  bottom:"3px",
+                },
+              },
+              root:{
+                minHeight:"15px",
+                '&.inner-tabs':{
+                  marginBottom:"14px",
+                  '.MuiTabs-flexContainer':{
+                    borderBottom:'1px solid' + grey, 
+                  },
+                },
+                '&.dash-tabs':{
+                  '.MuiTabs-flexContainer':{
+                    borderBottom:'none',
+                  },
+                },
+              },
+              
+              indicator:{
+                  height:"3px",
+                  marginBottom:"-1px",
+              },
+            },
+          },
+          MuiTab: {
+            styleOverrides: {
+              root: {
+                minHeight:"15px",
+                fontSize:"12px",
+                fontWeight:"400",
+                color:secondaryLight,
+                // padding:"5px 0",
+                borderRadius:"5px",
+                textTransform:"capitalize",
+                // minWidth:"max-content",
+                // marginLeft:"20px",
+                "&.tabs":{
+                  fontSize:"16px",
+                  fontWeight:"400",
+                  color:secondaryLight,
+                  padding:"0px 11px 18px",
+                  textTransform:"capitalize",
+                  minWidth:"max-content",
+                  marginRight:"12px",
+                  marginLeft:0,
+                  "&:hover , &:active":{
+                    color:secondaryLight,
+                    backgroundColor:'#37729329',
+                  },
+                  "&:focus":{
+                    color:secondaryLight,
+                  },
+                },
+                "&.tabs.Mui-selected":{
+                  color:primary,
+                  fontWeight:"600",
+                },
+              },
+            },
+          },
 
     },
 });
