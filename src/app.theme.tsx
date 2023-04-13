@@ -251,6 +251,15 @@ export const appTheme = createTheme({
                 },
             },
         },
+        MuiIcon:{
+            styleOverrides:{
+                root:{
+                    display:"flex",
+                    justifyContent:"center",
+                    alignItems:"center",
+                },
+            },
+        },
         MuiFormControlLabel: {
             styleOverrides: {
                 root: {
@@ -258,14 +267,6 @@ export const appTheme = createTheme({
                     fontWeight: "400",
                     lineHeight: "17px",
                     color: secondaryLight,
-                    ".MuiCheckbox-root .MuiSvgIcon-root": {
-                        width: "15px",
-                        height: "15px",
-                    },
-                    ".MuiRadio-root .MuiSvgIcon-root": {
-                        width: "16px",
-                        height: "16px",
-                    },
                     "&.remember-me .MuiFormControlLabel-label  ":{
                         fontSize:"12px",
                         fontWeight: "400",
@@ -292,10 +293,10 @@ export const appTheme = createTheme({
             styleOverrides:{
                 root:{
                     "&.MuiInputLabel-root":{
-                        top:"-2px",
+                        transform: "translate(14px, 14px)", 
                     },
-                    "&.MuiInputLabel-root.Mui-focused":{
-                        top:"1px",
+                    "&.MuiInputLabel-shrink":{
+                        transform: "translate(14px, -8px) scale(0.75)", 
                     },
                 },
             },
@@ -443,8 +444,8 @@ export const appTheme = createTheme({
                     // "&:active .MuiOutlinedInput-notchedOutline":{
                     //     borderColor:primary,
                     // },
-                    "&:hover .MuiOutlinedInput-notchedOutline":{
-                        borderColor:"#2977a361",
+                    "&:hover:not(.Mui-focused) .MuiOutlinedInput-notchedOutline":{
+                        borderColor:"rgba(0,0,0,0.3)",
                     },
                 },
                 input: {

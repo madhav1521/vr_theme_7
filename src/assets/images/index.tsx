@@ -43,3 +43,7 @@ export const error = require ("./ic-error.svg").default
 export const info = require ("./ic-info.svg").default
 export const warn = require ("./ic-warn.svg").default
 export const valid = require ("./ic-success.svg").default
+export const checked_box = require ("./ic-checked.svg").default
+export const unchecked_box = require ("./ic-unchecked.svg").default
+export const radio_checked = require ("./ic-radio-checked.svg").default
+export const radio_unchecked = require ("./ic-radio-unchecked.svg").default

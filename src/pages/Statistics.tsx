@@ -1,10 +1,10 @@
-import { Alert, Box, Button, Checkbox, Collapse, FormControl, FormControlLabel, Grid, IconButton, InputAdornment, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, SelectChangeEvent, Stack, TextField, Typography } from '@mui/material'
-import React from 'react'
+import { Alert, Box, Button, Checkbox, Collapse, FormControl, FormControlLabel, Grid, Icon, IconButton, InputAdornment, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, SelectChangeEvent, Stack, TextField, Typography, imageListClasses } from '@mui/material'
+import React, { useState } from 'react'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import { useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { error, info, upload_icon, valid, warn } from '../assets/images';
+import { checked_box, dotsicon, error, info, radio_checked, radio_unchecked, unchecked_box, upload_icon, valid, warn } from '../assets/images';
 import CloseIcon from '@mui/icons-material/Close';
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -14,32 +14,44 @@ interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
     value: number;
-  }
-  
-  function TabPanel(props: TabPanelProps) {
+}
+
+function TabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
     return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`simple-tabpanel-${index}`}
-        aria-labelledby={`simple-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <Box>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
-      </div>
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
     );
-  };
-  function a11yProps(index: number) {
+};
+function a11yProps(index: number) {
     return {
-      id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`,
+        id: `simple-tab-${index}`,
+        "aria-controls": `simple-tabpanel-${index}`,
     };
-  };
+};
+
+function checkprop() {
+    return (
+        <img src={checked_box} alt=''></img>
+    )
+};
+function uncheckprop() {
+    return (
+        <img src={unchecked_box} alt=''></img>
+    )
+};
+
 
 export default function Statistics() {
     // for password ----------------------------------------------------------------------------
@@ -76,7 +88,7 @@ export default function Statistics() {
     // for tabs ----------------------------------------------------------------------------
     const [value, setValue] = React.useState(0);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-      setValue(newValue);
+        setValue(newValue);
     };
 
     return (
@@ -95,7 +107,7 @@ export default function Statistics() {
                                 {/* First Column
                                 ------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography variant='h5' className='card-head inner-head'>One Column</Typography>
-                                <Grid container spacing={{xs:2,sm:3}}>
+                                <Grid container spacing={{ xs: 2, sm: 3 }}>
                                     <Grid item xs={12}>
                                         <TextField
                                             autoComplete="given-name"
@@ -143,7 +155,7 @@ export default function Statistics() {
                                 {/* second Column
                                 ------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography variant='h5' className='card-head inner-head'>Two Column</Typography>
-                                <Grid container columnSpacing={{xs:2,sm:3, md:4}} rowSpacing={{xs:2, md:3}}>
+                                <Grid container columnSpacing={{ xs: 2, sm: 3, md: 4 }} rowSpacing={{ xs: 2, md: 3 }}>
                                     <Grid item xs={12} sm={6}>
                                         <TextField
                                             autoComplete="name"
@@ -210,7 +222,7 @@ export default function Statistics() {
                                 {/* Third Column
                                 ------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography variant='h5' className='card-head inner-head'>Third Column</Typography>
-                                <Grid container columnSpacing={{xs:2,sm:3, md:4}} rowSpacing={{xs:2, md:3}}>
+                                <Grid container columnSpacing={{ xs: 2, sm: 3, md: 4 }} rowSpacing={{ xs: 2, md: 3 }}>
                                     <Grid item xs={12} sm={4}>
                                         <Box
                                             component="form"
@@ -259,7 +271,7 @@ export default function Statistics() {
                                 ------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography variant='h5' className='card-head inner-head'>Fourth Column</Typography>
 
-                                <Grid container columnSpacing={{xs:2,sm:3, md:4}} rowSpacing={{xs:2, md:3}}>
+                                <Grid container columnSpacing={{ xs: 2, sm: 3, md: 4 }} rowSpacing={{ xs: 2, md: 3 }}>
 
                                     <Grid item xs={12} sm={6} lg={3}>
                                         <TextField
@@ -351,17 +363,18 @@ export default function Statistics() {
                                     Check Box
                                 </Typography>
                                 <Grid item xs={12}>
-                                    <FormControlLabel 
+                                    <FormControlLabel
                                         className='icon-label-text'
                                         control={
-                                            <Checkbox color="primary" />
+                                            <Checkbox color="primary" icon={<Icon>{<img src={unchecked_box} />}</Icon>} checkedIcon={<Icon>{<img src={checked_box} />}</Icon>} />
+
                                         }
                                         label="Selected"
                                     />&nbsp;&nbsp;&nbsp;
                                     <FormControlLabel
                                         className='icon-label-text'
                                         control={
-                                            <Checkbox color="primary" />
+                                            <Checkbox color="primary" icon={<Icon>{<img src={unchecked_box} />}</Icon>} checkedIcon={<Icon>{<img src={checked_box} />}</Icon>} />
                                         }
                                         label="Not yet Selected"
                                     />
@@ -380,8 +393,8 @@ export default function Statistics() {
                                             aria-labelledby="demo-row-radio-buttons-group-label"
                                             name="row-radio-buttons-group"
                                         >
-                                            <FormControlLabel className='icon-label-text' value="female" control={<Radio />} label="Selected" />&nbsp;&nbsp;&nbsp;
-                                            <FormControlLabel className='icon-label-text' value="male" control={<Radio />} label="Not yet Selected" />
+                                            <FormControlLabel className='icon-label-text' value="female" control={<Radio icon={<Icon>{<img src={radio_unchecked} />}</Icon>} checkedIcon={<Icon>{<img src={radio_checked} />}</Icon>} />} label="Selected" />&nbsp;&nbsp;&nbsp;
+                                            <FormControlLabel className='icon-label-text' value="male" control={<Radio icon={<Icon>{<img src={radio_unchecked} />}</Icon>} checkedIcon={<Icon>{<img src={radio_checked} />}</Icon>} />} label="Not yet Selected" />
                                         </RadioGroup>
                                     </FormControl>
                                 </Grid>
@@ -488,12 +501,12 @@ export default function Statistics() {
                                         </Box>
                                     </Grid>
                                 </Grid>
-                                 {/* CTA starts
+                                {/* CTA starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Typography component="h6" variant="h6" className="inner-subhead cta page-subhead">
                                     CTA
                                 </Typography>
-                                <Box className="prim-sec">
+                                <Box className="prim-sec" gap={2}>
                                     <Button type="submit" disableElevation variant="contained" className="primary-btn" onClick={() => { navigate("/dashboard"); }} >
                                         <Typography component="span" variant="h6" color={'white'}>
                                             Primary
