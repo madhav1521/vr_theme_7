@@ -1,6 +1,6 @@
 import { Box, Button, Link, Menu, MenuItem, MenuProps, SelectChangeEvent, Typography, styled } from '@mui/material'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { brandicon, dotsicon, notificationicon, searchicon, toggleicon } from '../assets/images';
 
@@ -30,13 +30,13 @@ export default function Header() {
   ) => {
     setAlignment(newAlignment);
   };
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+  const [anchorEl, setAnchorEl1] = React.useState<null | HTMLElement>(null);
+  const open1 = Boolean(anchorEl);
+  const handleClick1 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl1(event.currentTarget);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClose1 = () => {
+    setAnchorEl1(null);
   };
 
   const [anchorEl2, setAnchorEl2] = React.useState<null | HTMLElement>(null);
@@ -47,14 +47,30 @@ export default function Header() {
   const handleClose2 = () => {
     setAnchorEl2(null);
   };
-
- 
+//  const [class,setClass] = useState(false);
+// const arb = () => {
+//       setClass(!class);
+//     };
   function togglebtn() {
     document.body.classList.toggle('setStatus')
   };
   function searchbar() {
     document.body.classList.toggle('setSearch')
   };
+  function toggleclass() {
+    document.body.classList.toggle('arb')
+    document.body.setAttribute('dir' , 'rtl' )
+
+  if (document.body.classList.contains('arb')) {
+     return document.body.setAttribute('dir', 'rtl')
+  }
+  else{
+    return document.body.setAttribute('dir', 'ltr')
+  }
+  // return(document.body.classList.contains('arb') ? document.body.setAttribute('dir', 'rtl') : document.body.setAttribute('dir', 'ltr'))
+};
+  
+
   function cmplogo(){
     const box = document.getElementById("brand-icon")
     if(box!=null){
@@ -63,6 +79,7 @@ export default function Header() {
     }
   };
 
+
   return (
     <>
     <Box className='overlaysearch' onClick={searchbar}></Box>
@@ -70,30 +87,32 @@ export default function Header() {
     <Box className='header'>
       {/*   search-bar 
         --------------------------------------------------------------------------------------------------------------------------- */}
-        <Button variant='outlined' className='toggle-btn dropdown' onClick={togglebtn} >
+        <Button variant='outlined' className='toggle-btn dropdown' onClick={togglebtn} title='toggle-sidebar'>
           <img src={toggleicon} alt="toggle-button" />
         </Button>
-        <NavLink id='brand-icon' to='/dashboard' onClick={cmplogo}>
+        <NavLink id='brand-icon' to='/dashboard' onClick={cmplogo} title='company-logo'>
           <img src={brandicon} alt="company-logo" />
         </NavLink>
         <Box className='search-box'>
           <input type='search' title='search' className="search-input" placeholder="Search" ></input>
-          <Button onClick={searchbar} className="btn-close-search dropdown"><CloseRoundedIcon color="primary" /></Button>
+          <Button onClick={searchbar} title='close-search' className="btn-close-search dropdown"><CloseRoundedIcon color="primary" /></Button>
       </Box>
       {/*   notification 
         --------------------------------------------------------------------------------------------------------------------------- */}
         
-        <Button className="search-btn dropdown" onClick={searchbar}>
+        <Button className="search-btn dropdown" title='search-here' onClick={searchbar}>
           <img src={searchicon} alt="search-icon" />
         </Button>
         <Button id="demo-customized-button"
-          aria-controls={open ? 'demo-customized-menu' : undefined}
+          aria-controls={open1 ? 'demo-customized-menu' : undefined}
           aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
+          aria-expanded={open1 ? 'true' : undefined}
           disableElevation
-          onClick={handleClick}
+          onClick={handleClick1}
           variant='contained'
-          className='dropdown notification-btn'>
+          className='dropdown notification-btn'
+          title='notification-btn'
+          >
           <img src={notificationicon} alt="notification-button" />
         </Button>
         <StyledMenu
@@ -102,14 +121,14 @@ export default function Header() {
             'aria-labelledby': 'demo-customized-button',
           }}
           anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
+          open={open1}
+          onClose={handleClose1}
           className="menu-list"
         >
-          <MenuItem onClick={handleClose} disableRipple>
+          <MenuItem onClick={handleClose1} disableRipple>
             One unread message
           </MenuItem>
-          <MenuItem onClick={handleClose} disableRipple>
+          <MenuItem onClick={handleClose1} disableRipple>
             Help
           </MenuItem>
         </StyledMenu>
@@ -125,6 +144,7 @@ export default function Header() {
           disableElevation
           onClick={handleClick2}
           className="dropdown menu-dots"
+          title='menu-btn'
         >
           <img alt="menu" src={dotsicon} />
         </Button>
@@ -139,11 +159,11 @@ export default function Header() {
           className="menu-list"
         >
 
-          <MenuItem onClick={handleClose2} disableRipple>
-            My Profile
+          <MenuItem disableRipple onClick={toggleclass} >
+            ltr to rtl
           </MenuItem>
-          <MenuItem onClick={handleClose2} disableRipple>
-            Help
+          <MenuItem disableRipple onClick={handleClose2}>
+            Action
           </MenuItem>
 
           <MenuItem onClick={() => { navigate('/'); }} disableRipple>

@@ -199,6 +199,7 @@ export default function Statistics() {
                                                             onClick={handleClickShowPassword1}
                                                             onMouseDown={handleMouseDownPassword1}
                                                             edge="end"
+                                                            title='show-password'
                                                         >
                                                             {showPassword1 ? <Visibility color="warning" /> : <VisibilityOff color="warning" />}
                                                         </IconButton>
@@ -295,6 +296,7 @@ export default function Statistics() {
                                                             onClick={handleClickShowPassword2}
                                                             onMouseDown={handleMouseDownPassword2}
                                                             edge="end"
+                                                            title='show-password'
                                                         >
                                                             {showPassword2 ? <Visibility color="warning" /> : <VisibilityOff color="warning" />}
                                                         </IconButton>
@@ -347,7 +349,7 @@ export default function Statistics() {
                                 </Typography>
 
                                 <Stack direction="row" alignItems="center" spacing={3} className="upload-content">
-                                    <Button variant="outlined" component="label" className="upload-btn" >
+                                    <Button variant="outlined" component="label" title='upload-files' className="upload-btn" >
                                         <img src={upload_icon
                                         } alt="upload files" /> &nbsp; Upload
                                         <input hidden accept="image/*" multiple type="file" />
@@ -507,12 +509,12 @@ export default function Statistics() {
                                     CTA
                                 </Typography>
                                 <Box className="prim-sec" gap={2}>
-                                    <Button type="submit" disableElevation variant="contained" className="primary-btn" onClick={() => { navigate("/dashboard"); }} >
+                                    <Button type="submit" disableElevation variant="contained" title='primary-btn' className="primary-btn" onClick={() => { navigate("/dashboard"); }} >
                                         <Typography component="span" variant="h6" color={'white'}>
                                             Primary
                                         </Typography>
                                     </Button>
-                                    <Button type="submit" disableElevation variant="outlined" className="secondary-btn" onClick={() => { navigate("/"); }} >
+                                    <Button type="submit" disableElevation variant="outlined" title='secondary-btn' className="secondary-btn" onClick={() => { navigate("/"); }} >
                                         <Typography component="span" variant="h6" color={'primary'}>
                                             Secondary
                                         </Typography>

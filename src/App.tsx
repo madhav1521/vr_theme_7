@@ -7,6 +7,9 @@ import Login from './pages/Login';
 import { appTheme } from './app.theme';
 import Dashboard from './pages/Dashboard';
 import Statistics from './pages/Statistics';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
+
 
 function App() {
   return (

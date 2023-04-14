@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Divider, Link, Typography } from "@mui/material";
+import { Box,Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { brandlogo, dashboard, dashboardnew, documents, documentsnew, maintenance, maintenancenew, orders, ordersnew, profile, settings, settingsnew, statistics, statisticsnew, users, usersnew } from '../assets/images';
 
@@ -13,11 +13,13 @@ export default function Sidebar() {
             <Box className="brand-logo"><NavLink to='/dashboard' title="brand-logo" > <img src={brandlogo} alt=""  /></NavLink></Box>
             <Box className='sidebar-content'>
                 <Box className='profile' >
-                    <NavLink to='/' title='Your profile'><img src={profile} alt="profile" /></NavLink>
-                    <Box className='profile-description'>
-                        <Typography component='p' variant='h5' >John Doe</Typography>
-                        <Typography component='span' variant='body2' >Super Admin</Typography>
-                    </Box>
+                    <NavLink to='/' title='Your profile'>
+                        <img src={profile} alt="profile" />
+                        <Box className='profile-description'>
+                            <Typography component='p' variant='h5' >John Doe</Typography>
+                            <Typography component='span' variant='body2' >Super Admin</Typography>
+                        </Box>
+                    </NavLink>
                 </Box>
                 <NavLink to="/dashboard" className="sidelinks" title="Dashboard" onClick={togglebtn}>
                     <img src={dashboard} alt="" className="default" />

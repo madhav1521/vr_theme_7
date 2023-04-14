@@ -1,5 +1,5 @@
 import { Box, Button, Card, Grid, Typography, styled, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import Header from '../components/Header'
 import IconButton from '@mui/material/IconButton';
@@ -58,9 +58,11 @@ export default function Dashboard() {
   const handleClose3 = () => {
     setAnchorEl3(null);
   };
+
+
   return (
     <Box className='main-outer'>
-      <Box className='main-container'>
+      <Box className= 'main-container'  >
         <Sidebar />
         <Box className='wrapper-page'>
           <Header />
@@ -157,7 +159,7 @@ export default function Dashboard() {
                       onClick={handleClick3}
                       className='sales-menu'
                       color="warning"
-                      title='menu icon'
+                      title='menu-icon'
                     >
                       <MoreVertIcon />
                     </IconButton>
@@ -238,7 +240,7 @@ export default function Dashboard() {
                 <Box className='card'>
                   <Box className="card-head-line">
                     <Typography variant='h5' className='card-head'>Revenue Report</Typography>
-                    <Button className='views-btn'>View all</Button>
+                    <Button className='views-btn' title='views-btn'>View all</Button>
                   </Box>
 
                   <TableContainer >
@@ -277,7 +279,7 @@ export default function Dashboard() {
                                   onClick={handleClick3}
                                   className='sales-menu'
                                   color='warning'
-                                  title='menu icon'
+                                  title='menu-icon'
                                 >
                                   <MoreHorizIcon />
                                 </IconButton>

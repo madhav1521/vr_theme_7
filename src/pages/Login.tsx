@@ -1,9 +1,11 @@
 import { BorderColor, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Box, Button, Card, Checkbox, Container, FormControl, FormControlLabel, Grid, Icon, IconButton, Input, InputAdornment, InputLabel, Link, OutlinedInput, Paper, TextField, Typography } from '@mui/material';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { brandlogo, checked_box, mockupimage, unchecked_box } from '../assets/images';
 import { title } from 'process';
+import rtlPlugin from 'stylis-plugin-rtl';
+import createCache from '@emotion/cache';
 
 export default function Login() {
 
@@ -26,6 +28,7 @@ export default function Login() {
     };
 
     return (
+        
         <Box className='login'>
             <Container className='login-container' maxWidth='xl' >
                 <Box className="mockup">
@@ -35,7 +38,7 @@ export default function Login() {
                 </Box>
                 <Box className='login-page'   >
                     <Box className="login-form">
-                        <img src={brandlogo} alt="brand" className="brand-logo" />
+                        <NavLink to='/'><img src={brandlogo} alt="brand" className="brand-logo" /></NavLink>
                         <Typography variant="h3" marginTop={{sm:"25px", xs:"15px"}} className="form-heading" marginBottom={{sm:"5px", xs:"15px"}}>
                             Welcome to Company!
                         </Typography>
@@ -44,11 +47,12 @@ export default function Login() {
                         </Typography>
 
                         <Grid container spacing={3} marginTop={{sm:"23px", xs:"15px"}} marginBottom={{sm:"18px", xs:"15px"}}>
-                            <Grid item xs={12} >
+                            <Grid item xs={12}  >
+                                <div dir='rtl'>
                                 <TextField label="Username" variant="outlined" type="text" autoFocus fullWidth />
-                            </Grid>
+                            </div></Grid>
                             <Grid item xs={12} >
-                                <FormControl variant="outlined" fullWidth className='login-password'>
+                                <FormControl  variant="outlined" fullWidth className='login-password'>
                                     <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                                     <OutlinedInput
                                         id="outlined-adornment-password"
@@ -91,9 +95,8 @@ export default function Login() {
                         >
                             Login
                         </Button>
-
                         <Typography variant="body1" component="p" className="register-here">
-                            New user ? <Link href="#" component="span" title="sign up here" className="sign-up">Sign up</Link>
+                            New user ? <Link href="#" title="sign up here" className="sign-up">Sign up</Link>
                         </Typography>
 
                     </Box>

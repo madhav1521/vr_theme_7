@@ -1,5 +1,5 @@
-import { createTheme } from '@mui/material';
-
+import {Direction, createTheme } from '@mui/material';
+const currentDirection = 'ltr';
 const primary = "#5AC4FF";
 const primaryMain = '#153D78';
 const primaryContrast = '#F6F6F6';
@@ -13,15 +13,13 @@ const greyDark = '#DBDBDB';
 const white = "#FFFFFF";
 const black = '#000000';
 const blue = "#F4FBFF";
-// const purple = "#F6EFFF";
-// const peach = "#FFF0E9";
-// const orange = "#FFE4E4";
 const danger = '#FF5555';
 const primaryHover = '#35598E';
 const warning = '#cecece';
 
 
 export const appTheme = createTheme({
+    direction:currentDirection,
     palette: {
         primary: {
             main: primary,
@@ -158,17 +156,24 @@ export const appTheme = createTheme({
                 },
             },
         },
+        MuiCheckbox:{
+            styleOverrides:{
+                root:{
+                    padding:"5px",
+                },
+            },
+        },
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: "5px",
-
+                    borderRadius: "3px",
                     "&.login-btn": {
+                        borderRadius: "5px",
                         fontSize: "16px",
                         fontWeight: "600",
                         lineHeight: "24px",
                         color: white,
-                        margin: "17px 0 25px",
+                        margin: "12px 0 25px",
                         padding: "10px 0",
                         "@media (max-width:599px)": { margin: "15px 0" }
                     },
@@ -181,6 +186,11 @@ export const appTheme = createTheme({
                         marginLeft:"auto", marginRight:"30px",
                         "@media (max-width:899px)": {marginRight:"20px", marginLeft:"0",},
                         "@media (max-width:599px)": { marginRight: "10px", }
+                    },
+                    ".arb &.notification-btn":{
+                        marginLeft:"30px", marginRight:"auto",
+                        "@media (max-width:899px)": {marginRight:"0", marginLeft:"20px",},
+                        "@media (max-width:599px)": { marginRight: "0",marginLeft:"10px", }
                     },
                     "&.dropdown": {
                         backgroundColor: primaryHover,
@@ -212,6 +222,10 @@ export const appTheme = createTheme({
                         marginLeft: "auto",
                         textTransform: "capitalize",
                     },
+                    ".arb &.views-btn": {
+                        marginRight: "auto",
+                        marginLeft:"0",
+                    },
                     ".upload-content &.MuiButton-root":{
                         padding:"7px 25px 8px",
                         border:"0",
@@ -222,6 +236,7 @@ export const appTheme = createTheme({
                     },
                     "&.primary-btn, &.secondary-btn":{
                         padding:"11px 39px",
+                        borderRadius: "5px",
                         "& span":{
                             fontWeight:"600",
                             "@media(max-width:599px)":{
@@ -239,6 +254,14 @@ export const appTheme = createTheme({
                             marginRight:"10px",
                         },
                     },
+                    ".arb &.primary-btn":{
+                        marginRight:"0",
+                        marginLeft:"20px",
+                        "@media(max-width:599px)":{
+                            marginRight:"0",
+                            marginLeft:"10px",
+                        },
+                    },
                 },
             },
         },
@@ -248,6 +271,7 @@ export const appTheme = createTheme({
                     "&.sales-menu ":{
                         padding:"0",
                     },
+                    
                 },
             },
         },
@@ -257,6 +281,10 @@ export const appTheme = createTheme({
                     display:"flex",
                     justifyContent:"center",
                     alignItems:"center",
+                    ".forgot-line &.MuiIcon-root":{
+                        width:"15px",
+                        height:"15px",
+                    },
                 },
             },
         },
@@ -272,6 +300,14 @@ export const appTheme = createTheme({
                         fontWeight: "400",
                         lineHeight: "17px",
                         color: secondaryLight,
+                         
+                    },
+                    "&.remember-me  ":{
+                        marginLeft:"-4px",
+                    },
+                    ".arb &.remember-me  ":{
+                        marginLeft:"0",
+                        marginRight:"-4px",
                     },
                 },
             },
@@ -284,7 +320,12 @@ export const appTheme = createTheme({
                         width: "20px",
                         height: "20px",
                         color: secondaryLight,
+                        transform:"rotateX(180deg)",
                     },
+                    ".arb &.MuiInputAdornment-root":{
+                        marginLeft:"7px",
+                        marginRight:"0",
+                    }
                 },
 
             },
@@ -297,6 +338,14 @@ export const appTheme = createTheme({
                     },
                     "&.MuiInputLabel-shrink":{
                         transform: "translate(14px, -8px) scale(0.75)", 
+                        color:secondaryLight,
+                    },
+                    ".arb &.MuiInputLabel-root":{
+                        transform: "translate(-14px, 14px)", 
+                    },
+                    ".arb &.MuiInputLabel-shrink":{
+                        transform: "translate(14px, -8px) scale(0.75)", 
+                        color:secondaryLight,
                     },
                 },
             },
@@ -308,13 +357,11 @@ export const appTheme = createTheme({
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "18px",
-                    // top:"-2px",
-                    // ".MuiInputLabel-root .Mui-focused":{
-                    //     top:"1px",
-                    //     // ".MuiInputLabel-root":{
-                    //     //     top:"10px",
-                    //     // },
-                    // },
+                    ".arb &.MuiInputLabel-root":{
+                        right:"0",
+                        left:"auto",
+                        transformOrigin:"top right",
+                    },
                 },
             },
         },
@@ -375,6 +422,10 @@ export const appTheme = createTheme({
                         color:white,
                         marginLeft:"8px"
                     },
+                    ".arb &.text-message ":{
+                        marginLeft:"0",
+                        marginRight:"8px",
+                    },
                 },
             },
         },
@@ -392,6 +443,7 @@ export const appTheme = createTheme({
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "17px",
+                    letterSpacing:"-0.01em",
                     height: "47px",
                     borderBottom: "1px solid #EEEEEE",
                 },
@@ -435,23 +487,19 @@ export const appTheme = createTheme({
                     "&.Mui-error .MuiOutlinedInput-notchedOutline":{
                         border: "1px solid #FF5555" ,
                     },
-                    "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
-                        borderWidth:"1px",
-                    },
-                    // "&:focus .MuiOutlinedInput-notchedOutline":{
-                    //     borderColor:primary,
-                    // },
-                    // "&:active .MuiOutlinedInput-notchedOutline":{
-                    //     borderColor:primary,
-                    // },
                     "&:hover:not(.Mui-focused) .MuiOutlinedInput-notchedOutline":{
                         borderColor:"rgba(0,0,0,0.3)",
                     },
+                    "&.Mui-disabled:hover .MuiOutlinedInput-notchedOutline":{
+                        border: "1px dashed" + greyDark,
+                    },
+                    
                 },
                 input: {
                     padding: "13px 14px",
                     color: secondary,
                     fontSize: "15px",
+                    height:"22px",
                 },
                 notchedOutline: {
                     border: "1px solid" + greyDark,
@@ -555,6 +603,10 @@ export const appTheme = createTheme({
                   "&:focus":{
                     color:secondaryLight,
                   },
+                },
+                ".arb .&.tabs":{
+                    // marginLeft:0,
+                    marginRight:0,
                 },
                 "&.tabs.Mui-selected":{
                   color:primary,
