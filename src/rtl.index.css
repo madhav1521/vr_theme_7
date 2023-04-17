@@ -2,7 +2,7 @@
 /* Login page starts
 -------------------------------------------------------------------------------------------------------------------------- */
 .arb .mockup{padding-left: 20px; padding-right: 0;}
-.arb .login-page{margin-right: auto; margin-left: 0;}
+.arb .login-page{margin-right: auto; }
 
 
 /* main-container starts
@@ -12,7 +12,7 @@
 
 /* Sidebar starts
 -------------------------------------------------------------------------------------------------------------------------------- */
-
+.arb .sidebar{margin: 30px 30px 0 0;}
 .arb .sidebar-content .profile img{margin-left: 13px; margin-right: 0;}
 .arb .sidelinks p{padding-right: 10px; padding-left: 0;}
 .arb .active p{padding-right: 10px; padding-left: 0;}
@@ -38,7 +38,7 @@
 /* Statistics page starts
 -------------------------------------------------------------------------------------------------------------------------------- */
 .arb .text-select{background-position: left 16px center;}
-.arb .textarea{background-position: left 16px bottom 16px;}
+.arb .textarea{background-position: left 16px bottom 16px;background-image: url(./assets/images/ic-textarea-arb.svg);}
 
 /* media queries
 -------------------------------------------------------------------------------------------------------------------------------- */
@@ -51,7 +51,7 @@
     .arb .sidebar{margin-right: -264px;margin-left: 0;}
     .arb.setStatus .sidebar{margin-left: 0;margin-right: 30px;}
     .arb.setStatus .wrapper-page{margin-right: -294px; margin-left: 0;}
-    .arb.setSearch .btn-close-search{left: 10px; right: 0;}
+    .arb.setSearch .btn-close-search{left: 10px; right: auto;}
     /* .arb.setSearch .search-box .search-input{margin-right:0; } */
 
 }

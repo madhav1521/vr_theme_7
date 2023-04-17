@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { bucket, dotsicon, graph, moneybag, pic1, pic2, pic3, pic4, pic5, profit_curve, report_download, revenue_curve, table_dots, wallet } from '../assets/images'
+import { Helmet } from 'react-helmet-async';
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -59,8 +60,9 @@ export default function Dashboard() {
     setAnchorEl3(null);
   };
 
-
   return (
+    <>
+    {/* <Helmet> <title>Dashboard | company</title></Helmet> */}
     <Box className='main-outer'>
       <Box className= 'main-container'  >
         <Sidebar />
@@ -315,5 +317,6 @@ export default function Dashboard() {
         </Box>
       </Box>
     </Box>
+    </>
   )
 }

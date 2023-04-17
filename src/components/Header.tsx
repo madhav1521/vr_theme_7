@@ -47,10 +47,6 @@ export default function Header() {
   const handleClose2 = () => {
     setAnchorEl2(null);
   };
-//  const [class,setClass] = useState(false);
-// const arb = () => {
-//       setClass(!class);
-//     };
   function togglebtn() {
     document.body.classList.toggle('setStatus')
   };
