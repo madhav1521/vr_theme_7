@@ -156,7 +156,7 @@ export default function Header() {
         >
 
           <MenuItem disableRipple onClick={toggleclass} >
-            ltr to rtl
+            <Box onClick={handleClose2}>ltr to rtl</Box>
           </MenuItem>
           <MenuItem disableRipple onClick={handleClose2}>
             Action

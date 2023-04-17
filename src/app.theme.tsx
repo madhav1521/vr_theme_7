@@ -225,6 +225,10 @@ export const appTheme = createTheme({
                         "@media (max-width:899px)": {padding:"10px", maxWidth:"300px"},
                         "@media (max-width:599px)": {padding:"5px",}
                     },
+                    ".arb &.generate-report span":{
+                        marginLeft: "0",
+                        marginRight:"6px",
+                    },
                     "&.views-btn": {
                         marginLeft: "auto",
                         textTransform: "capitalize",
@@ -309,12 +313,14 @@ export const appTheme = createTheme({
                     fontWeight: "400",
                     lineHeight: "17px",
                     color: secondaryLight,
-                    "&.remember-me .MuiFormControlLabel-label  ":{
+                    "&.remember-me ":{
+                        marginLeft:"-4px",
+                    },
+                    "&.MuiFormControlLabel-label  ":{
                         fontSize:"12px",
                         fontWeight: "400",
                         lineHeight: "17px",
                         color: secondaryLight,
-                         
                     },
                     "&.remember-me  ":{
                         marginLeft:"-4px",
@@ -322,6 +328,10 @@ export const appTheme = createTheme({
                     ".arb &.remember-me  ":{
                         marginLeft:"0",
                         marginRight:"-4px",
+                    },
+                    ".arb &.icon-label-text":{
+                        marginLeft:"16px",
+                        marginRight:"-11px",
                     },
                 },
             },
@@ -555,6 +565,7 @@ export const appTheme = createTheme({
                 justifyContent:"space-between",
                 background:"transparent",
                 color:white,
+                height:"100%",
                 borderRadius: "5px", 
                 "&.text-danger":{
                   backgroundColor:"#FF5555",
@@ -567,6 +578,9 @@ export const appTheme = createTheme({
                 },
                 "&.text-success":{
                   backgroundColor:"#7EB62E",
+                },
+                ".arb &.MuiAlert-root":{
+                    padding:"4px 10px 4px 5px",
                 },
               },
               message:{
@@ -637,8 +651,8 @@ export const appTheme = createTheme({
                     color:secondaryLight,
                   },
                 },
-                ".arb .&.tabs":{
-                    // marginLeft:0,
+                ".arb &.tabs":{
+                    marginLeft:"12px",
                     marginRight:0,
                 },
                 "&.tabs.Mui-selected":{

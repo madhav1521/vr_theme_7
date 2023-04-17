@@ -80,7 +80,7 @@ export default function Dashboard() {
             {/* Sticker starts
           -------------------------------------------------------------------------------------------------------------------------------- */}
             <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} >
-              <Grid item xs={12} sm={6} lg={4}>
+              <Grid item xs={12}  lg={4}>
                 <Box className='card'>
                   <Typography variant='h5' className='card-head'>Order Statics</Typography>
                   <Box className='statics-data'>
@@ -147,10 +147,11 @@ export default function Dashboard() {
                   <img src={graph} alt="report-graph" className='img-fluid data-graph' />
                 </Box>
               </Grid>
-
+            {/* latest sale card 
+            ------------------------------------------------------------------------------------------------------------------------------------- */}
               <Grid item xs={12} lg={5} xl={4}>
                 <Box className='card latest-sale'>
-                  <Box className='card-head-line '>
+                  <Box className='card-head-line'>
                     <Typography variant='h5' className='card-head'>Latest Sale</Typography>
                     <IconButton
                       aria-label="more"
@@ -237,7 +238,8 @@ export default function Dashboard() {
 
                 </Box>
               </Grid>
-
+                      {/* revenue report table
+                      ---------------------------------------------------------------------------------------------------------------------------- */}
               <Grid item xs={12} sm={12}>
                 <Box className='card'>
                   <Box className="card-head-line">
