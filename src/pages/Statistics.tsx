@@ -452,7 +452,7 @@ export default function Statistics() {
                 <Stack
                   direction="row"
                   alignItems="center"
-                  spacing={3}
+                  // spacing={3}
                   className="upload-content"
                 >
                   <Button
@@ -544,7 +544,7 @@ export default function Statistics() {
                   </FormControl>
                 </Grid>
                 {/* Snackbar starts
-              ------------------------------------------------------------------------------------------------------------------------------- */}
+                ------------------------------------------------------------------------------------------------------------------------------- */}
                 <Typography
                   component="h6"
                   variant="h6"
@@ -677,7 +677,7 @@ export default function Statistics() {
                   </Grid>
                 </Grid>
                 {/* CTA starts
-              ------------------------------------------------------------------------------------------------------------------------------- */}
+                ------------------------------------------------------------------------------------------------------------------------------- */}
                 <Typography
                   component="h6"
                   variant="h6"
@@ -685,7 +685,7 @@ export default function Statistics() {
                 >
                   CTA
                 </Typography>
-                <Box className="prim-sec" gap={2}>
+                <Box className="prim-sec">
                   <Button
                     type="submit"
                     disableElevation
@@ -716,7 +716,7 @@ export default function Statistics() {
                   </Button>
                 </Box>
                 {/* Tabs starts
-              ------------------------------------------------------------------------------------------------------------------------------- */}
+                ------------------------------------------------------------------------------------------------------------------------------- */}
                 <Typography variant="h5" className="card-head inner-head">
                   Tabs
                 </Typography>

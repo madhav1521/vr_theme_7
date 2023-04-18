@@ -47,6 +47,9 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
+::-ms-reveal {
+  display: none;
+} 
 
 :root{
     --primary:#5AC4FF;
@@ -58,11 +61,12 @@ input[type="search"]::-webkit-search-results-decoration {
     --black:#000000;
     --white:#FFFFFF;
     --danger:#FF5555;
-    --blue:#F4FBFF;;
+    --blue:#F4FBFF;
 }
 
 /* Login page starts
 -------------------------------------------------------------------------------------------------------------------------- */
+/* for password eye in ms edge */
 
 .login{min-height: 100vh;display: flex; align-items: center; background: url(./assets/images/bg-image.jpg) no-repeat; background-position: center; background-size: cover;}
 .login .login-container{display: flex; align-items: center;margin:auto;max-width: 1310px; padding: 20px;}
@@ -93,7 +97,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .profile-description p{font-weight: 600;text-align: center;}
 .profile-description span{ color: #989898; text-align: center;}
 .sidebar-content .active{background-color: var(--primarymain);}
-
 .sidebar-content .sidelinks{display: flex;padding: 14px 15px; margin-bottom: 8px;border-radius: 3px;}
 .sidebar-content .sidelinks p{white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; padding-left: 10px; color: var(--secondaryLight);font-size: 15px; font-weight: 400; line-height: 17px;letter-spacing: -0.01em;}
 .sidebar-content .active p{padding-left: 10px; color: var(--white);}
@@ -101,7 +104,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .sidebar-content .sidelinks .active-img{display: none;} 
 .sidebar-content .active .default{display: none;} 
 .sidebar-content .active .active-img{display: block; } 
-
 .sidebar-content .sidelinks:not(.active):hover, .sidebar-content .sidelinks:not(.active):focus,.sidebar-content .sidelinks:not(.active):active {background-color: rgba(102, 100, 100, 0.2);}
 
 /* Header starts
@@ -122,12 +124,13 @@ input[type="search"]::-webkit-search-results-decoration {
 .page-content .latest-sale{padding: 0;}
 .curves-card{display: flex; flex-direction: column; padding:  0;}
 .curves-card > img{height:219px ; z-index: 1;}
-.card .statics-data{padding: 23px 0 30px;margin: auto 10px; text-align: center;display: flex; align-items: center; justify-content: space-between;}
+.card .statics-data{padding: 23px 0 30px;margin: 0 10px; text-align: center; display: flex; align-items: center; justify-content: space-between;}
 .card .statics-data p, .nums-text p{font-size: 20px; font-weight: 600; line-height: 23px;color: var(--secondary);white-space: nowrap;}
-.card-img-data{display: flex; align-items: center;}
+.card-img-data{display: flex; align-items: center;text-align: left;}
 .curves-card .card-img-data{padding-left: 30px;position:relative;bottom: 75px;margin-bottom: -45px; z-index: 2;}
 .card-img-data img{margin-right: 20px;}
-.card-head-line{display: flex; align-items: center;padding: 28px 18px 0 30px;}
+.card-head-line{display: flex; align-items: center;}
+.page-content .latest-sale .card-head-line{display: flex; align-items: center;padding: 28px 18px 0 30px;}
 .page-content .latest-sale ul{padding: 0 30px 30px;}
 .card .data-graph{margin-top: 36px;}
 .card-head-line .earning{margin-right: 50px;position: relative;}
@@ -136,13 +139,12 @@ input[type="search"]::-webkit-search-results-decoration {
 .card-head-line .expense::before{content: '';position: absolute; width: 10px;height: 10px;top: 4px;bottom: 0;left: -16px;right: 0; background-color: var(--primary); border-radius: 50px;}
 .card-head-line ul{display: flex;justify-content: flex-end; flex-wrap: wrap; margin-left: auto;}
 .card-head-line .sales-menu{margin-left: auto;}
-
 .card .profile-content{display: flex;align-items: center;padding: 26px 0 0;}
 .latest-sale li:not(:last-child){border-bottom: 1px solid #eeeeee;padding-bottom: 26px;}
 .profile-content .list-profile-image{margin-right: 16px;}
-
 .table-dots{display: flex; align-items: center;}
-
+.main-inner-card .prim-sec{display: flex; gap: 20px;}
+.upload-content{display: flex; gap: 20px;}
 
 /* Statistics page starts
 -------------------------------------------------------------------------------------------------------------------------------- */
@@ -151,14 +153,17 @@ input[type="search"]::-webkit-search-results-decoration {
 .main-inner-card .inner-head{margin-bottom: 26px ;}
 .main-inner-card .inner-subhead{margin-bottom: 16px;}
 .inner-subhead:not(:first-child){margin-top: 35px;}
-.prim-sec{gap:20px; display: flex;}
 .text-select{background: url(./assets/images/ic-select-arrow.svg) no-repeat; background-position: right 15px center;}
 .textarea{background: url(./assets/images/ic-textarea.svg) no-repeat; background-position: right 16px bottom 16px;}
-
+.main-inner-card .validation-notes{height: 100%;}
 /* media queries
 -------------------------------------------------------------------------------------------------------------------------------- */
 @media (max-width : 1399px) {}
-@media (max-width : 1199px) {}
+@media (max-width : 1199px) {
+  .card .statics-data-line{display: flex;padding: 23px 0 10px;} 
+  .card .statics-data-line .statics-data {justify-content: space-between; width: 100%;padding: 0;}
+  .card .statics-data-line .card-img-data{margin-left: 80px;flex-shrink: 0;}
+}
 @media (max-width : 899px) {
   /* login page ------------------------------------------------------------------- */
   .login-container{flex-direction: column;}
@@ -190,7 +195,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
   /* dashboard page --------------------------------------------------------------------- */
   .page-content{padding: 0 22px 30px;}
-
   .card{padding:20px 18px;}
   .curves-card{padding: 0;}
   .curves-card .card-img-data{padding-left: 20px;}
@@ -209,16 +213,19 @@ input[type="search"]::-webkit-search-results-decoration {
   .login-page{padding:20px 15px;}
   .card-head-line .earning{margin-right: 25px;}
   #brand-icon{ margin-left:10px;}
+
+  .card .statics-data-line{display: flex; flex-direction: column; padding: 0;} 
+  .card .statics-data-line .statics-data { padding: 23px 0 30px; width: auto; }
+  .card .statics-data-line .card-img-data{margin: 0;}
 }
 
-
-
 /* Right to left language
--------------------------------------------------------------------------------------------------- */
+------------------------------------------------------------------------------------------------------------------------------------------ */
 
 /* Login page starts
 -------------------------------------------------------------------------------------------------------------------------- */
 .arb .mockup{padding-left: 20px; padding-right: 0;}
+.arb .mockup img{transform: rotateY(180deg);}
 .arb .login-page{margin-right: auto; }
 
 /* Sidebar starts
@@ -234,13 +241,14 @@ input[type="search"]::-webkit-search-results-decoration {
 
 /* Dashboard page starts
 -------------------------------------------------------------------------------------------------------------------------------- */
+.arb .card-img-data{text-align: right;}
 .arb .curves-card .card-img-data{padding-right: 30px; padding-left: 0;}
 .arb .card-img-data img{margin-left: 20px; margin-right: 0;}
 .arb .card-head-line .earning{margin-left: 50px; margin-right: 0;}
 .arb .card-head-line .earning::before{right: -16px; left: 0;}
 .arb .card-head-line .expense::before{right: -16px; left: 0;}
 .arb .card-head-line ul{margin-right: auto; margin-left: 0;}
-.card-head-line{padding: 28px 30px 0 18px;}
+.arb .latest-sale .card-head-line{padding: 28px 30px 0 18px;}
 .arb .card-head-line .sales-menu{margin-right: auto; margin-left: 0;}
 .arb .profile-content .list-profile-image{margin-left: 16px; margin-right: 0;}
 
@@ -253,7 +261,10 @@ input[type="search"]::-webkit-search-results-decoration {
 -------------------------------------------------------------------------------------------------------------------------------- */
 
 @media (max-width : 1399px) {}
-@media (max-width : 1199px) {}
+@media (max-width : 1199px) {
+  .arb .card .statics-data-line .card-img-data{margin-left: 0;margin-right: 80px;}
+
+}
 @media (max-width : 899px) {
     .arb .sidebar{margin-top: 0;}
     .arb .curves-card .card-img-data{padding-right: 20px; padding-left: 0;}
@@ -267,4 +278,7 @@ input[type="search"]::-webkit-search-results-decoration {
 @media (max-width : 599px){
     .arb .card-head-line .earning{margin-left: 25px; margin-right: 0;}
     .arb #brand-icon{margin-right: 10px; margin-left: 0;}
+
+    .arb .card .statics-data-line .card-img-data{margin: 0;}
+
 }

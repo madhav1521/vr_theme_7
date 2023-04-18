@@ -62,263 +62,265 @@ export default function Dashboard() {
 
   return (
     <>
-    {/* <Helmet> <title>Dashboard | company</title></Helmet> */}
-    <Box className='main-outer'>
-      <Box className= 'main-container'  >
-        <Sidebar />
-        <Box className='wrapper-page'>
-          <Header />
-          <Box className='page-content'>
-            <Box className='page-title'>
-              <Typography variant='h2' >Dashboard</Typography>
-              <Button disableElevation variant='contained' className='generate-report' title='generate-report'>
-                <img src={report_download} alt="download" />
-                <Typography variant='h6' component='span' >Generate Report</Typography>
-              </Button>
-            </Box>
+      {/* <Helmet> <title>Dashboard | company</title></Helmet> */}
+      <Box className='main-outer'>
+        <Box className='main-container'  >
+          <Sidebar />
+          <Box className='wrapper-page'>
+            <Header />
+            <Box className='page-content'>
+              <Box className='page-title'>
+                <Typography variant='h2' >Dashboard</Typography>
+                <Button disableElevation variant='contained' className='generate-report' title='generate-report'>
+                  <img src={report_download} alt="download" />
+                  <Typography variant='h6' component='span' >Generate Report</Typography>
+                </Button>
+              </Box>
 
-            {/* Sticker starts
-          -------------------------------------------------------------------------------------------------------------------------------- */}
-            <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} >
-              <Grid item xs={12}  lg={4}>
-                <Box className='card'>
-                  <Typography variant='h5' className='card-head'>Order Statics</Typography>
-                  <Box className='statics-data'>
-                    <Box>
-                      <Typography variant='subtitle1' component='p' >240</Typography>
-                      <Typography variant='body2' component='span' >Pending</Typography>
-                    </Box>
-                    <Box>
-                      <Typography variant='subtitle1' component='p' >35</Typography>
-                      <Typography variant='body2' component='span' >Shipping</Typography>
-                    </Box>
-                    <Box>
-                      <Typography variant='subtitle1' component='p' margin='auto'>240</Typography>
-                      <Typography variant='body2' component='span' >Completed</Typography>
+              {/* Sticker starts
+              -------------------------------------------------------------------------------------------------------------------------------- */}
+              <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} >
+                <Grid item xs={12} lg={4}>
+                  <Box className='card'>
+                    <Typography variant='h5' className='card-head'>Order Statics</Typography>
+                    <Box className='statics-data-line'>
+                      <Box className='statics-data'>
+                        <Box>
+                          <Typography variant='subtitle1' component='p' >240</Typography>
+                          <Typography variant='body2' component='span' >Pending</Typography>
+                        </Box>
+                        <Box>
+                          <Typography variant='subtitle1' component='p' >35</Typography>
+                          <Typography variant='body2' component='span' >Shipping</Typography>
+                        </Box>
+                        <Box>
+                          <Typography variant='subtitle1' component='p' margin='auto'>240</Typography>
+                          <Typography variant='body2' component='span' >Completed</Typography>
+                        </Box>
+                      </Box>
+                      <Box className='card-img-data'>
+                        <img src={bucket} alt="order-image" />
+                        <Box className='nums-text'>
+                          <Typography variant='body2' component='span' >Total Orders</Typography>
+                          <Typography variant='subtitle1' component='p' >580</Typography>
+                        </Box>
+                      </Box>
                     </Box>
                   </Box>
-                  <Box className='card-img-data'>
-                    <img src={bucket} alt="order-image" />
-                    <Box className='nums-text'>
-                      <Typography variant='body2' component='span' >Total Orders</Typography>
-                      <Typography variant='subtitle1' component='p' >580</Typography>
+                </Grid>
+
+                <Grid item xs={12} sm={6} lg={4}>
+                  <Box className='card curves-card'>
+                    <img src={revenue_curve} alt="revenue-image" className='img-fluid' />
+                    <Box className='card-img-data'>
+                      <img src={wallet} alt="revenue-image" />
+                      <Box className='nums-text'>
+                        <Typography variant='body2' component='span' >Revenue</Typography>
+                        <Typography variant='subtitle1' component='p' >$ 45,000.00</Typography>
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
-              </Grid>
+                </Grid>
 
-              <Grid item xs={12} sm={6} lg={4}>
-                <Box className='card curves-card'>
-                  <img src={revenue_curve} alt="revenue-image" className='img-fluid' />
-                  <Box className='card-img-data'>
-                    <img src={wallet} alt="revenue-image" />
-                    <Box className='nums-text'>
-                      <Typography variant='body2' component='span' >Revenue</Typography>
-                      <Typography variant='subtitle1' component='p' >$ 45,000.00</Typography>
+                <Grid item xs={12} sm={6} lg={4}>
+                  <Box className='card curves-card'>
+                    <img src={profit_curve} alt="revenue-image" className='img-fluid' />
+                    <Box className='card-img-data'>
+                      <img src={moneybag} alt="moneybag-image" />
+                      <Box className='nums-text'>
+                        <Typography variant='body2' component='span' >Profit</Typography>
+                        <Typography variant='subtitle1' component='p' >$ 10,000.00</Typography>
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
-              </Grid>
+                </Grid>
 
-              <Grid item xs={12} sm={6} lg={4}>
-                <Box className='card curves-card'>
-                  <img src={profit_curve} alt="revenue-image" className='img-fluid' />
-                  <Box className='card-img-data'>
-                    <img src={moneybag} alt="moneybag-image" />
-                    <Box className='nums-text'>
-                      <Typography variant='body2' component='span' >Profit</Typography>
-                      <Typography variant='subtitle1' component='p' >$ 10,000.00</Typography>
-                    </Box>
-                  </Box>
-                </Box>
-              </Grid>
-
-              {/* report-graph 
+                {/* report-graph 
             ----------------------------------------------------------------------------------------------------------------- */}
-              <Grid item xs={12} lg={7} xl={8}>
-                <Box className='card'>
-                  <Box className='card-head-line'>
-                    <Typography variant='h5' className='card-head'>Revenue Report</Typography>
-                    <ul>
-                      <li><Typography variant='body2' component='span' className='earning' >Earning</Typography></li>
-                      <li><Typography variant='body2' component='span' className='expense' >Expense</Typography></li>
-                    </ul>
+                <Grid item xs={12} lg={7} xl={8}>
+                  <Box className='card'>
+                    <Box className='card-head-line'>
+                      <Typography variant='h5' className='card-head'>Revenue Report</Typography>
+                      <ul>
+                        <li><Typography variant='body2' component='span' className='earning' >Earning</Typography></li>
+                        <li><Typography variant='body2' component='span' className='expense' >Expense</Typography></li>
+                      </ul>
+                    </Box>
+                    <img src={graph} alt="report-graph" className='img-fluid data-graph' />
                   </Box>
-                  <img src={graph} alt="report-graph" className='img-fluid data-graph' />
-                </Box>
-              </Grid>
-            {/* latest sale card 
+                </Grid>
+                {/* latest sale card 
             ------------------------------------------------------------------------------------------------------------------------------------- */}
-              <Grid item xs={12} lg={5} xl={4}>
-                <Box className='card latest-sale'>
-                  <Box className='card-head-line'>
-                    <Typography variant='h5' className='card-head'>Latest Sale</Typography>
-                    <IconButton
-                      aria-label="more"
-                      id="long-button"
-                      aria-controls={open3 ? 'long-menu' : undefined}
-                      aria-expanded={open3 ? 'true' : undefined}
-                      aria-haspopup="true"
-                      onClick={handleClick3}
-                      className='sales-menu'
-                      color="warning"
-                      title='menu-icon'
-                    >
-                      <MoreVertIcon />
-                    </IconButton>
-                    <StyledMenu
-                      id="demo-customized-menu"
-                      MenuListProps={{
-                        'aria-labelledby': 'demo-customized-button',
-                      }}
-                      anchorEl={anchorEl3}
-                      open={open3}
-                      onClose={handleClose3}
-                      className="menu-list"
-                    >
-                      <MenuItem onClick={handleClose3} disableRipple>
-                        Add more
-                      </MenuItem>
-                    </StyledMenu>
+                <Grid item xs={12} lg={5} xl={4}>
+                  <Box className='card latest-sale'>
+                    <Box className='card-head-line'>
+                      <Typography variant='h5' className='card-head'>Latest Sale</Typography>
+                      <IconButton
+                        aria-label="more"
+                        id="long-button"
+                        aria-controls={open3 ? 'long-menu' : undefined}
+                        aria-expanded={open3 ? 'true' : undefined}
+                        aria-haspopup="true"
+                        onClick={handleClick3}
+                        className='sales-menu'
+                        color="warning"
+                        title='menu-icon'
+                      >
+                        <MoreVertIcon />
+                      </IconButton>
+                      <StyledMenu
+                        id="demo-customized-menu"
+                        MenuListProps={{
+                          'aria-labelledby': 'demo-customized-button',
+                        }}
+                        anchorEl={anchorEl3}
+                        open={open3}
+                        onClose={handleClose3}
+                        className="menu-list"
+                      >
+                        <MenuItem onClick={handleClose3} disableRipple>
+                          Add more
+                        </MenuItem>
+                      </StyledMenu>
+
+                    </Box>
+
+                    <ul>
+                      <li>
+                        <Box className='profile-content' >
+                          <img src={pic1} alt="key" className='list-profile-image img-fluid' />
+                          <Box className='profile-stats' >
+                            <Typography component='p' variant="h5" className="names">Jenny Wilson</Typography>
+                            <Typography component='span' variant="body2" className="deeds">Purchased Mobile</Typography>
+                          </Box>
+                          <Typography variant="body2" component='p' className="time-active">2m ago</Typography>
+                        </Box>
+                      </li>
+                      <li>
+                        <Box className='profile-content' >
+                          <img src={pic2} alt="key" className='list-profile-image img-fluid' />
+                          <Box className='profile-stats' >
+                            <Typography component='p' variant="h5" className="names">Jerome Bell</Typography>
+                            <Typography component='span' variant="body2" className="deeds">Purchased TV</Typography>
+                          </Box>
+                          <Typography variant="body2" component='p' className="time-active">10m ago</Typography>
+                        </Box>
+                      </li>
+                      <li>
+                        <Box className='profile-content' >
+                          <img src={pic3} alt="key" className='list-profile-image img-fluid' />
+                          <Box className='profile-stats' >
+                            <Typography component='p' variant="h5" className="names">Robert Fox</Typography>
+                            <Typography component='span' variant="body2" className="deeds">Purchased Mobile</Typography>
+                          </Box>
+                          <Typography variant="body2" component='p' className="time-active">40m ago</Typography>
+                        </Box>
+                      </li>
+                      <li>
+                        <Box className='profile-content' >
+                          <img src={pic4} alt="key" className='list-profile-image img-fluid' />
+                          <Box className='profile-stats' >
+                            <Typography component='p' variant="h5" className="names">Floyd Miles</Typography>
+                            <Typography component='span' variant="body2" className="deeds">Purchased TV</Typography>
+                          </Box>
+                          <Typography variant="body2" component='p' className="time-active">55m ago</Typography>
+                        </Box>
+                      </li>
+                      <li>
+                        <Box className='profile-content last-profile-content' >
+                          <img src={pic5} alt="key" className='list-profile-image img-fluid' />
+                          <Box className='profile-stats' >
+                            <Typography component='p' variant="h5" className="names">Wade Warren</Typography>
+                            <Typography component='span' variant="body2" className="deeds">Purchased Bed</Typography>
+                          </Box>
+                          <Typography variant="body2" component='p' className="time-active">59m ago</Typography>
+                        </Box>
+                      </li>
+                    </ul>
 
                   </Box>
-
-                  <ul>
-                    <li>
-                      <Box className='profile-content' >
-                        <img src={pic1} alt="key" className='list-profile-image img-fluid' />
-                        <Box className='profile-stats' >
-                          <Typography component='p' variant="h5" className="names">Jenny Wilson</Typography>
-                          <Typography component='span' variant="body2" className="deeds">Purchased Mobile</Typography>
-                        </Box>
-                        <Typography variant="body2" component='p' className="time-active">2m ago</Typography>
-                      </Box>
-                      </li>
-                      <li>
-                      <Box className='profile-content' >
-                        <img src={pic2} alt="key" className='list-profile-image img-fluid' />
-                        <Box className='profile-stats' >
-                          <Typography component='p' variant="h5" className="names">Jerome Bell</Typography>
-                          <Typography component='span' variant="body2" className="deeds">Purchased TV</Typography>
-                        </Box>
-                        <Typography variant="body2" component='p' className="time-active">10m ago</Typography>
-                      </Box>
-                      </li>
-                      <li>
-                      <Box className='profile-content' >
-                        <img src={pic3} alt="key" className='list-profile-image img-fluid' />
-                        <Box className='profile-stats' >
-                          <Typography component='p' variant="h5" className="names">Robert Fox</Typography>
-                          <Typography component='span' variant="body2" className="deeds">Purchased Mobile</Typography>
-                        </Box>
-                        <Typography variant="body2" component='p' className="time-active">40m ago</Typography>
-                      </Box>
-                      </li>
-                      <li>
-                      <Box className='profile-content' >
-                        <img src={pic4} alt="key" className='list-profile-image img-fluid' />
-                        <Box className='profile-stats' >
-                          <Typography component='p' variant="h5" className="names">Floyd Miles</Typography>
-                          <Typography component='span' variant="body2" className="deeds">Purchased TV</Typography>
-                        </Box>
-                        <Typography variant="body2" component='p' className="time-active">55m ago</Typography>
-                      </Box>
-                      </li>
-                      <li>
-                      <Box className='profile-content last-profile-content' >
-                        <img src={pic5} alt="key" className='list-profile-image img-fluid' />
-                        <Box className='profile-stats' >
-                          <Typography component='p' variant="h5" className="names">Wade Warren</Typography>
-                          <Typography component='span' variant="body2" className="deeds">Purchased Bed</Typography>
-                        </Box>
-                        <Typography variant="body2" component='p' className="time-active">59m ago</Typography>
-                      </Box>
-                    </li>
-                  </ul>
-
-                </Box>
-              </Grid>
-                      {/* revenue report table
+                </Grid>
+                {/* revenue report table
                       ---------------------------------------------------------------------------------------------------------------------------- */}
-              <Grid item xs={12} sm={12}>
-                <Box className='card'>
-                  <Box className="card-head-line">
-                    <Typography variant='h5' className='card-head'>Revenue Report</Typography>
-                    <Button className='views-btn' title='views-btn'>View all</Button>
-                  </Box>
+                <Grid item xs={12} sm={12}>
+                  <Box className='card'>
+                    <Box className="card-head-line">
+                      <Typography variant='h5' className='card-head'>Revenue Report</Typography>
+                      <Button className='views-btn' title='views-btn'>View all</Button>
+                    </Box>
 
-                  <TableContainer >
-                    <Table className='table' size="small" aria-label="a dense table" >
-                      <TableHead >
-                        <TableRow>
-                          <TableCell component="th" align="left">SKU</TableCell>
-                          <TableCell component="th" align="left">Order id</TableCell>
-                          <TableCell component="th" align="left">Name</TableCell>
-                          <TableCell component="th" align="left">Email</TableCell>
-                          <TableCell component="th" align="left">Item</TableCell>
-                          <TableCell component="th" align="left">Price</TableCell>
-                          <TableCell component="th" align="left">Action</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody >
-                        {rows.map((row) => (
-                          <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                          >
-                            <TableCell scope="row">{row.sku}</TableCell>
-                            <TableCell align="left">{row.order}</TableCell>
-                            <TableCell align="left">{row.name}</TableCell>
-                            <TableCell align="left">{row.email}</TableCell>
-                            <TableCell align="left">{row.item}</TableCell>
-                            <TableCell align="left">{row.amount}</TableCell>
-                            <TableCell align="left">{
-                              <Box>
-                                <IconButton
-                                  aria-label="more"
-                                  id="long-button"
-                                  aria-controls={open3 ? 'long-menu' : undefined}
-                                  aria-expanded={open3 ? 'true' : undefined}
-                                  aria-haspopup="true"
-                                  onClick={handleClick3}
-                                  className='sales-menu'
-                                  color='warning'
-                                  title='menu-icon'
-                                >
-                                  <MoreHorizIcon />
-                                </IconButton>
-                                <StyledMenu
-                                  id="demo-customized-menu"
-                                  MenuListProps={{
-                                    'aria-labelledby': 'demo-customized-button',
-                                  }}
-                                  anchorEl={anchorEl3}
-                                  open={open3}
-                                  onClose={handleClose3}
-                                  className="menu-list"
-                                >
-                                  <MenuItem onClick={handleClose3} disableRipple>
-                                    Add more
-                                  </MenuItem>
-                                </StyledMenu>
-                              </Box>
-
-                            }</TableCell>
+                    <TableContainer >
+                      <Table className='table' size="small" aria-label="a dense table" >
+                        <TableHead >
+                          <TableRow>
+                            <TableCell component="th" align="left">SKU</TableCell>
+                            <TableCell component="th" align="left">Order id</TableCell>
+                            <TableCell component="th" align="left">Name</TableCell>
+                            <TableCell component="th" align="left">Email</TableCell>
+                            <TableCell component="th" align="left">Item</TableCell>
+                            <TableCell component="th" align="left">Price</TableCell>
+                            <TableCell component="th" align="left">Action</TableCell>
                           </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
+                        </TableHead>
+                        <TableBody >
+                          {rows.map((row) => (
+                            <TableRow
+                              key={row.name}
+                              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            >
+                              <TableCell scope="row">{row.sku}</TableCell>
+                              <TableCell align="left">{row.order}</TableCell>
+                              <TableCell align="left">{row.name}</TableCell>
+                              <TableCell align="left">{row.email}</TableCell>
+                              <TableCell align="left">{row.item}</TableCell>
+                              <TableCell align="left">{row.amount}</TableCell>
+                              <TableCell align="left">{
+                                <Box>
+                                  <IconButton
+                                    aria-label="more"
+                                    id="long-button"
+                                    aria-controls={open3 ? 'long-menu' : undefined}
+                                    aria-expanded={open3 ? 'true' : undefined}
+                                    aria-haspopup="true"
+                                    onClick={handleClick3}
+                                    className='sales-menu'
+                                    color='warning'
+                                    title='menu-icon'
+                                  >
+                                    <MoreHorizIcon />
+                                  </IconButton>
+                                  <StyledMenu
+                                    id="demo-customized-menu"
+                                    MenuListProps={{
+                                      'aria-labelledby': 'demo-customized-button',
+                                    }}
+                                    anchorEl={anchorEl3}
+                                    open={open3}
+                                    onClose={handleClose3}
+                                    className="menu-list"
+                                  >
+                                    <MenuItem onClick={handleClose3} disableRipple>
+                                      Add more
+                                    </MenuItem>
+                                  </StyledMenu>
+                                </Box>
+
+                              }</TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </TableContainer>
 
 
-                </Box>
+                  </Box>
+                </Grid>
+
               </Grid>
-
-            </Grid>
+            </Box>
           </Box>
         </Box>
       </Box>
-    </Box>
     </>
   )
 }

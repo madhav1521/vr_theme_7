@@ -26,7 +26,7 @@ export default function Login() {
 
   return (
     <>
-     {/* <Helmet> <title>Login | company</title></Helmet> */}
+     {/* <Helmet> <title> Login | company </title></Helmet> */}
       <Box className="login">
         <Container className="login-container" maxWidth="xl">
           <Box className="mockup">
